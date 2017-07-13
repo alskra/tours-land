@@ -1,0 +1,35 @@
+include ../blocks/doctype/doctype
+
+block variables
+  -
+    var pageTitle = pages.index.title,
+    pageUrls = [pages.index.url];
+
+include ../blocks/header/header
+include ../blocks/content/content
+include ../blocks/footer/footer
+include ../blocks/articles-list/articles-list
+include ../blocks/articles-list-2/articles-list-2
+include ../blocks/articles-list-3/articles-list-3
+
++doctype(pageTitle)
+  .-wrapper
+    +header()
+    +content()
+      section.-section._gray
+        .-container-fluid
+          h2.-section.__title.h1 Почему все вдруг решили бродить по музеям и старинным улочкам российских и зарубежных городов?
+          +articles-list(articlesList)
+      section.-section
+        .-container-fluid
+          h2.-section.__title.h1 Другие тренды этого лета!
+          +articles-list-2(articlesList2)
+      section.-section._gray
+        .-container-fluid
+          h2.-section.__title.h1 Самые популярные в России туристические направления этого лета
+          +articles-list-3(articlesList3)
+      section.-section
+        .-container-fluid
+          h2.-section.__title._small.h1 Идите в ногу со временем! #[br]Тренды этого лета, подобранные лично для вас:
+          +articles-list-2(articlesList2)
+    +footer()
