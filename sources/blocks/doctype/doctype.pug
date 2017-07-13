@@ -6,8 +6,7 @@ mixin doctype(title)
   html(class="no-js" lang="ru")
     head
       meta(charset="utf-8")
-      //-title!= title ? title + ' — ' + package.description : package.description
-      title!= package.description
+      title!= title ? title + ' — ' + package.description : package.description
       //-base(target="_blank")
       //-base(href="http://pravovest-audit.ru//")
       meta(name="description" content="Current page description.")
